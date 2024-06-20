@@ -18,17 +18,17 @@ document.addEventListener('DOMContentLoaded', () => {
           const content = document.createElement('div');
           content.classList.add('content');
 
-          // if (Array.isArray(item.content)) {
+          if (Array.isArray(item.content)) {
             item.content.forEach(paragraph => {
               const p = document.createElement('p');
               p.textContent = paragraph;
               content.appendChild(p);
             });
-          // } else {
-          //   const p = document.createElement('p');
-          //   p.textContent = item.content;
-          //   content.appendChild(p);
-          // }
+          } else {
+            const p = document.createElement('p');
+            p.textContent = item.content;
+            content.appendChild(p);
+          }
 
           collapsedData.appendChild(button);
           collapsedData.appendChild(content);
