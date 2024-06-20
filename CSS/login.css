@@ -6,10 +6,14 @@
     font-size: 0.8em;
 }
 
+.fa-lock:before {
+    content:none;
+}
 
 
-
-
+.fa-envelope:before{
+    content:none;
+}
 
 
 @media (max-width: 426px) {

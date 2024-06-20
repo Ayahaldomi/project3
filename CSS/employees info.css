@@ -44,7 +44,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: flex-start;
     margin: 1em 0;
 }
 #searchName, #searchID, #searchGender {
@@ -78,8 +78,9 @@ body {
     align-items: center;
 }
 #backbtn a{
-    color:black;
+    /* color:black; */
     text-decoration: none;
+    width: auto;
 }
 
 
@@ -87,4 +88,15 @@ body {
   margin-right:18px;
   margin-left:10px;
  text-align: left;
+}
+
+
+#toGoBack {
+    display: inline !important;
+    width: 120px;
+}
+@media screen and (max-width: 426px){
+    #searchContainer {
+             justify-content: flex-end;
+    }
 }
