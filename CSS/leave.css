@@ -78,6 +78,7 @@ input[type="submit"] {
     background-color: #ffffff;
     border: none;
     border-radius: 4px;
+    border: solid red 1px;
     padding: 10px 20px;
     cursor: pointer;
     /* display: block; */
