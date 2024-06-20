@@ -1,7 +1,7 @@
 
 
 async function getJsonUser() {
-    const response = await fetch("../oneUser.json");
+    const response = await fetch("../JSON/oneUser.json");
     const jsonUser = await response.json();
     return jsonUser;
 }
@@ -29,7 +29,7 @@ async function updateUI() {
         serviceLink.classList.add('white');
         serviceLink.removeAttribute('tabindex');
         serviceLink.removeAttribute('aria-disabled');
-        serviceLink.setAttribute('href', 'https://www.example.com');
+        // serviceLink.setAttribute('href', 'https://www.example.com');
         serviceLink.style.color = 'white !important';
     } else {
         serviceLink.style.display = "none";
@@ -47,8 +47,9 @@ const logOutButton = document.getElementById("logout");
 
 if (logOutButton) {
     logOutButton.addEventListener('click', () => {
+        console.log('why')
         sessionStorage.clear();
-        location.reload();
+        window.location.href="../index.html"
     });
 }
 
