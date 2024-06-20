@@ -1,4 +1,6 @@
-
+body{
+    background-color: #F5F5F5;
+}
 .vh-100 {
     background-color: white !important;
     height: 100vh !important;
