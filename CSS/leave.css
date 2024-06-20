@@ -259,6 +259,8 @@ button {
     overflow: hidden;
 }
 #confirm.active{
+    top: 50%;
+    left: 50%;
     opacity: 1;
     height: auto;
     transition: opacity 0.5s ease-out;

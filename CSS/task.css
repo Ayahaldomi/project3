@@ -145,6 +145,7 @@ input[type="submit"] {
     color: #ffffff;
     border: none;
     border-radius: 4px;
+    border:solid 1px red;
     padding: 10px 20px;
     cursor: pointer;
     /* display: block; */
@@ -299,8 +300,6 @@ tr td{
 }
 #confirm{
     position: fixed;
-    top: 50%;
-    left: 50%;
     transform: translate(-50%, -50%);
     background-color: white;
     padding: 20px;
@@ -313,6 +312,8 @@ tr td{
     overflow: hidden;
 }
 #confirm.active{
+    top: 50%;
+    left: 50%;
     opacity: 1;
     height: auto;
     transition: opacity 0.5s ease-out;
