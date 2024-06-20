@@ -141,6 +141,7 @@ p#name{
     position: relative;
     left: 65em;
     top: 0.5em;
+    cursor: default !important;
 }
 .divs {
     display: flex;
