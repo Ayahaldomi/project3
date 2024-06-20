@@ -24,6 +24,7 @@ async function updateUI() {
         document.getElementById("loginLink").style.display = "none";
         document.getElementById("registerLink").style.display = "none";
         document.getElementById("userDropdown").style.display = "block";
+        document.getElementById("loginservices").style.display = "block";
         document.getElementById("userName").textContent = currentUser.firstName;
 
         serviceLink.classList.add('white');

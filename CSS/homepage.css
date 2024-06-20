@@ -17,6 +17,9 @@ body {
     overflow: hidden;
 
 }
+#loginservices{
+    display: none;
+}
 #homepageContainter::before {
 content: "";
 position: absolute;
