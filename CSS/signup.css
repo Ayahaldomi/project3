@@ -5,18 +5,24 @@ body{
     background-color: #F5F5F5 !important;
     height: 100vh !important;
 }
+label {
+    display: inline-block;
+    /* margin-bottom: .5rem; */
+}
 
 .mb-4, .my-4 {
     margin: -10px !important;
     padding: 0px 20px !important;
 }
 p.text-center.h1.fw-bold.mb-5.mx-1.mx-md-4.mt-4 {
-    margin-bottom: 24px !important;
+    margin-bottom: 10px !important;
 }
 .container.h-100 {
     height: auto !important;
 }
-
+p.text-center.h1.fw-bold.mb-5.mx-1.mx-md-4.mt-4 {
+    font-size: 45px !important;
+}
 
 .error {
   color: red;
@@ -27,7 +33,7 @@ p.text-center.h1.fw-bold.mb-5.mx-1.mx-md-4.mt-4 {
 }
 
 footer {
-    margin-top: 200px;
+    margin-top: 50px;
 }
 
 #registerButton {
@@ -41,10 +47,10 @@ footer {
 
 }
 
-a {
+.logins {
     color:  #003366 !important;
 }
-a:hover {
+.logins:hover {
     color: #007bff !important;
 }
 
@@ -56,7 +62,12 @@ a:hover {
     text-shadow: 0 7px 6px rgba(0, 0, 0, 0.2);
 }
 
-
+.p-md-5 {
+    padding: 0rem !important;
+}
+div#fullBody {
+    padding: 0 !important;
+}
 
 
 
