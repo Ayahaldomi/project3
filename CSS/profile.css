@@ -12,6 +12,18 @@ body {
     display: flex;
     margin-bottom: 5em;
 }
+#titleProfile{
+    margin-top: 1.25em;
+    text-align: center;
+    color: #003366;
+    font-size: 3em;
+    font-weight: 800;
+    width: 100%;
+    background-color: #F5F5F5;
+    height: 2em;
+    align-content: center;
+    text-shadow: 0 7px 6px rgba(0, 0, 0, 0.2);
+}
 #container {
     display: grid;
     gap: 0.625em; 
@@ -23,82 +35,33 @@ body {
     width: 20em;
     margin-top: 2em;
     background-color: #F5F5F5;
-    height: 43em;
     color: white;
     margin-left: 3em;
-}
-#content hr {
-    width: 20em; 
-    height: .0625em; 
-    background-color: #ccc; 
-    border: none; 
-    margin: 0.625em 0; 
-    /* position: relative; */
-    position: 50%;
-}
-#genderAge::before, #nationalityMobile::before {
-    content: "";
-    position: absolute;
-    top: 29%;
-    transform: translateY(-50%);
-    width: .0625em;
-    background-color: #ccc;
-    height: 3.7em;
-    left: 49%;
 }
 #content span{
     font-weight: 650;
     text-align: center;
 }
-
-
 #content p{
     font-weight: 100 ;
 }
 #yourImg {
     position: relative;
-    width: 320px;
-    height: 250px;
+    width: 20em;
+    height: 15.625em;
 }
 #namePosition {
     position: relative;
     text-align: center;
     background-color: #003366;
-    height: 10%;
     margin-top: -0.25em;
     margin-bottom: -0.57em;
     padding-top: 1em;
-    padding-bottom: 6em;
+    padding-bottom: 1em;
 }
 p#name{
     font-size: x-large;
     font-weight: 500;
-}
-#nationalityMobile {
-    display: grid;
-    grid-template-columns: auto 1fr; 
-    grid-auto-rows: auto; 
-    position: relative;
-    gap: 7em; 
-}
-#nationality{
-    position: relative;
-    left: 1em;
-}
-#joined {
-    text-align: center;
-}
-
-#genderAge {
-    display: grid;
-    grid-template-columns: auto 1fr; 
-    grid-auto-rows: auto; 
-    position: relative;
-    gap: 10rem; 
-}
-#gender2{
-    position: relative;
-    left: 1em;
 }
 /* Additional Form Styles */
 #form-container {
@@ -126,16 +89,13 @@ p#name{
 #buttonn {
     display: inline-block;
     border-radius: 0.3125em;
-    background-color:#03386cec;
+    background-color:#FFA726;
     color:#F5F5F5;
     /* border: none; */
     cursor: pointer;
     padding: 0.625em 0.625em;
     text-decoration: none; 
     font-size: small;
-}
-#buttonn:hover {
-    background-color: #003366;
 }
 #buttonn {
     position: relative;
@@ -207,25 +167,6 @@ p#name{
         margin-top: -3em;
         margin-bottom: -2.5em;
     }
-    #content hr {
-        width: 20em;
-        height: .025em;
-        background-color: #ccc;
-        border: none;
-        margin: 0.625em 0;
-        position: 50%;
-        margin-top: -0.375em;
-    }
-    #genderAge::before, #nationalityMobile::before {
-        content: "";
-        position: absolute;
-        top: 30%;
-        transform: translateY(-50%);
-        width: .0625em;
-        background-color: #ccc;
-        height: 3.7em;
-        left: 50%;
-    }
 }
 /* Finish Additional Form Styles */
 
@@ -296,6 +237,30 @@ p#name{
 .form input[type="submit"]:hover {
     background-color: #003366;
 }
+input#cancel {
+    background-color: white;
+    border-radius: 0.25em !important;
+    border-style: solid;
+    border: 0.0625em red solid;
+    padding: 0.625em 1.25em !important;
+    font-weight: 500;
+    color: red;
+    width: 9.018125em;
+    height: 2.85em;
+    position: relative;
+    left: 24em;
+}
+input#change {
+    border: 0.0625em solid #ffa826;
+    position: relative;
+    left: 24.05em;
+    background-color: #FFA726;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    padding: 0.625em 1.25em !important;
+    border-radius: 0.25em !important;
+}
+
 @media screen and (max-width: 426px) {
     form {
         display: flex;
