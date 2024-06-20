@@ -27,24 +27,23 @@ body {
     align-content: center;
     text-shadow: 0 7px 6px rgba(0, 0, 0, 0.1);
 }
-    .collapsible {
-      background-color: #f1f1f1 ;
-      color:#003366;
-      cursor: pointer;
-      padding:1em;
-      width: 100%;
-      border: none;
-      text-align: left;
-      outline: none;
-      font-size: 1em;
-      border: 1px solid rgb(176, 176, 176);
-      border-radius: 1em;
-      margin-left: 0.5em;
-      margin-right: 0.5em;
-       
-      font-weight: 600;
-    
-    }
+.collapsible {
+  background-color: #f1f1f1 ;
+  color:#003366;
+  cursor: pointer;
+  padding:1em;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 1em;
+  border: 1px solid rgb(176, 176, 176);
+  border-radius: 1em;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  margin-bottom: 0.3em;
+  font-weight: 600;
+   }
 
 
     
