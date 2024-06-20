@@ -47,8 +47,9 @@ const logOutButton = document.getElementById("logout");
 
 if (logOutButton) {
     logOutButton.addEventListener('click', () => {
+        console.log('why')
         sessionStorage.clear();
-        // location.reload();
+        window.location.href="../index.html"
     });
 }
 
