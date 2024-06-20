@@ -141,6 +141,7 @@ p#name{
     position: relative;
     left: 65em;
     top: 0.5em;
+    cursor: default !important;
 }
 .divs {
     display: flex;
@@ -195,7 +196,8 @@ p#name{
         justify-content: center;
         align-items: center;
         justify-items: center;
-        margin-left: 3em;
+        margin-bottom: 2em;
+        cursor: not-allowed;
     }
     #namePosition {
         position: relative;
