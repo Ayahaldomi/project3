@@ -22,7 +22,7 @@ if (firstNameData && lastNameData && emailData && genderData) {
     let sessionCurrentUser = JSON.parse(sessionStorage.getItem('loggedInUser'));
 
 
-    //dobule check that we have data in sessionStorage
+    //double check that we have data in sessionStorage
     if (sessionCurrentUser && sessionCurrentUser.email) {
         
             if (sessionCurrentUser.email) {
