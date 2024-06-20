@@ -1,0 +1,356 @@
+*{
+    font-family: "Open Sans", sans-serif;
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    background-color: #F5F5F5;
+}
+.blurContainer#blur.active{
+    -webkit-filter: blur(2px);
+    -moz-filter: blur(2px);
+    -o-filter: blur(2px);
+    -ms-filter: blur(2px);
+    filter: blur(2px);
+    pointer-events: none;
+}
+.blurContainer#blur{
+    transition:0.5s;
+}
+
+h1{
+    text-align: center;
+    font-weight: 800;
+    color: #003366;
+    margin: 30px 0;
+}
+#addTaskSelect{
+    display: flex;
+    width: 90%;
+    justify-content: flex-start;
+    MARGIN: auto;
+    align-items: baseline;
+    
+}
+#form {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: 3s;
+    transition: opacity 0.5s ease-out;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    
+}
+#form.active{
+    opacity: 1;
+    height: auto;
+    transition: opacity 0.5s ease-out height 0.1s;
+}
+
+#myselect{
+    width: 35%;
+    margin-right: 40px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],textarea {
+    width: 98%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+#container{
+    display: flex;
+    flex-wrap: wrap;
+}
+#container div{
+    width: 50%;
+}
+ #status, #priority{
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+#startDate, #dueDate{
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+.select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+     color: #003366; /*Text color  */
+}
+textarea {
+    resize: vertical;
+}
+input[type="text"], select {
+    padding: 0.3rem;
+    font-size: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: white;
+    color: #999;
+}
+input[type="submit"] {
+    background-color: #FFA726;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    display: block;
+    /* margin: 0 auto; */
+}
+.button {
+    background-color: #FFA726;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+}
+.cancle {
+    background-color: red;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    /* display: block; */
+    margin: 0 auto;
+}
+
+input[type="submit"]:hover {
+    background-color: #e69824;
+}
+
+.button:hover {
+    background-color: #e69824;
+}
+.cancle:hover {
+    background-color: rgb(199, 0, 0);
+}
+#buttons{
+    display: flex;
+}
+table.table.table-hover {
+    overflow-x:auto;
+
+}
+table.table.table-hover tbody tr {
+    transition: 0.5s;
+
+}
+table.table.table-hover tbody tr:hover {
+    background-color: #e698245e;
+
+}
+
+div#table-div {
+    height: 500px;
+    margin-bottom: 20px;
+    
+}
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #e698245e !important;
+}
+.table {
+    background-color: white;
+    width: 90%;
+    margin: auto;
+    text-align: center;
+}
+
+.delete-button {
+    background: none;
+    border: none;
+}
+tr td{
+    font-weight: 500;
+    max-width: 200px;
+    word-wrap: break-word;
+}
+.TodoS{
+    color: white;
+    background-color:#959595;
+    padding: 5px 10px;
+    border-radius: 8px;
+    text-align: center;
+    width: 90%;
+    display: inline-block;
+}
+.inProgressS{
+    color: white;
+    background-color:rgba(0, 128, 0, 0.75);
+    padding: 5px 10px;
+    border-radius: 8px;
+    width: 90%;
+    display: inline-block;
+}
+.doneS{
+    color: white;
+    background-color:rgba(0, 0, 255, 0.75);
+    padding: 5px 10px;
+    border-radius: 8px;
+    width: 90%;
+    display: inline-block;
+}
+.lowP{
+    color: white;
+    background-color: rgba(0, 255, 0, 0.60);
+    padding: 5px 10px;
+    border-radius: 8px;
+    width: 90%;
+    display: inline-block;
+}
+.mediumP{
+    color: white;
+    background-color: #b6b60b;
+    padding: 5px 10px;
+    border-radius: 8px;
+    width: 90%;
+    display: inline-block;
+}
+.highP{
+    color: white;
+    background-color: rgba(255, 0, 0, 0.60);
+    padding: 5px 10px;
+    border-radius: 8px;
+    width: 90%;
+    display: inline-block;
+}
+
+
+
+@media screen and (max-width: 450px) {
+     #form{
+        width: 400px;
+    }
+    #backbtn{
+        margin-left: 1.1em !important;
+    }
+    #myselect {
+        width: 45%;
+    }
+
+  }
+
+  #zain{
+    width: 300px;
+  }
+
+  #backbtn{
+    background-color:#f1f1f1;
+    border:1px solid #FFA726 ;
+    color:#FFA726;
+    font-size:1.2em ;
+     font-weight:500;
+    width:120px;
+    height: 2em;
+    text-align:left;
+    border-radius: 0.7em;
+    margin-bottom: 0.5em;
+    margin-left: 4em;
+    /* position:absolute;
+  left: 0.5em;
+    top:12.5em; */
+    align-items: center;
+}
+#backbtn a{
+    color:black;
+    text-decoration: none;
+
+}
+#backarrow{
+  margin-right:18px;
+  margin-left:10px;
+ text-align: left;
+}
+#confirm{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: opacity 0.5s ease-out;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+}
+#confirm.active{
+    opacity: 1;
+    height: auto;
+    transition: opacity 0.5s ease-out;
+}
+.popup {
+    background-color: white;
+    width: 350px;
+    border-radius: 8px;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+.popup h2 {
+    font-size: 18px;
+    margin: 0;
+    margin-bottom: 10px;
+}
+.popup p {
+    margin: 20px 0;
+    font-size: 14px;
+    color: #555;
+}
+.popup .buttons {
+    display: flex;
+    justify-content: space-evenly;
+}
+.popup .buttons button {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+.popup .buttons .cancel {
+    background-color: #e0e0e0;
+    color: #555;
+}
+.popup .buttons .ok {
+    background-color: #FFA726;
+    color: white;
+}

@@ -1,0 +1,51 @@
+
+.vh-100 {
+    background-color: white !important;
+    height: 100vh !important;
+}
+
+.mb-4, .my-4 {
+    margin: -10px !important;
+    padding: 0px 20px !important;
+}
+
+
+
+.error {
+  color: red;
+  font-size: 0.7em;
+  display: inline-block;  
+  min-height: 0.5em;  
+  color: red;  
+}
+
+footer {
+    margin-top: 200px;
+}
+
+
+
+#registerButton {
+
+        color: #fff;
+        text-decoration: none;
+        background: orange;
+        border: none;
+    
+}
+
+
+
+
+@media (max-width: 426px) {
+    .vh-100 { height: 140vh !important }
+    footer {
+        margin-top:384px !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .p-md-5 {
+        padding: 0rem !important;
+    }
+}

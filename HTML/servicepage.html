@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page name</title>
+
+    <!-- navbar and footer CSS. DON'T change anything in them unless agreed upon with the whole team. -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="../CSS/navbar.css">
+    <link rel="stylesheet" href="../CSS/footer.css">
+    <link rel ="stylesheet" href="../CSS/servicepage.css">
+
+    <!-- your CSS link. please create your CSS file in the CSS folder. -->
+
+</head>
+<body>
+    
+    <!-- navbar HTML. DON'T change anything here unless agreed upon with the whole team. -->
+    <div id="brandAboveContainer">
+        <a id="brandAbove" href="#">Zain</a>
+    </div>
+    <nav class="navbarContainer navbar navbar-expand-lg navbar-light">
+        <img src="../Images/Logo03.PNG" class="navbar-brand" alt="">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span><i class="fa-solid fa-bars" style="color: #ffffff;"></i></span>
+
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link white" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link white" id="service" href="servicepage.html">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link white" href="aboutsection.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link white" href="contactsection.html">Contact Us</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item" id="loginLink">
+                    <a class="nav-link white" href="login.html">Login</a>
+                </li>
+                <li class="nav-item" id="registerLink">
+                    <a class="nav-link white" href="signup.html">Register</a>
+                </li>
+                <li class="nav-item dropdown" id="userDropdown" style="display: none;">
+                    <a class="nav-link white dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Welcome, <span id="userName"></span>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="profilePage0.html">Profile</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- your HTML --><!-- please remove the div first -->
+
+             
+    <div>
+        <div id="serviceText"> SERVICES </div>
+        <div class="card-container">
+          <div class="card1">
+              <img src="../Images/SERVICES/2162c342515c4ebb1cce20ee09a01fb9.jpg" alt="Image 1" class="serviceImage">
+              <div class="text-overlay">  <a  href="leave.html">	Leave Application  </a><p>Submit and manage leave requests efficiently through our comprehensive HR services platform.</p></div>
+          </div>
+          <div class="card1">
+              <img src="../Images/SERVICES/17420a0d9f355c3c729c7828e5d2b33b.jpg" alt="Image 2" class="serviceImage">
+              <div class="text-overlay"> <a href="#">	View employees information </a> <p>Access and adhere to company policies seamlessly with our integrated HR services platform.</p></div>
+          </div>
+          <div class="card1">
+              <img src="../Images/SERVICES/1dcadd86afe1c0d5cc0ec52bbe8bf9ee.jpg" alt="Image 3" class="serviceImage">
+              <div class="text-overlay"> <a href="PolicyPage.html">	Company Policies </a> <p>View comprehensive employee information easily through our streamlined HR services platform.</p></div>
+          </div>
+          <div class="card1">
+              <img src="../Images/SERVICES/264ac96af75745190e815c22f37420a7.jpg" alt="Image 4" class="serviceImage">
+              <div class="text-overlay"> <a href="Task.html">	Task Management  </a><p>Efficiently manage tasks through our integrated HR services platform.</p> </div>
+          </div>
+          <div class="card1">
+              <img src="../Images/SERVICES/d536db4937f9a2fa3cec94fe3a91d7ec.jpg" alt="Image 5" class="serviceImage">
+              <div class="text-overlay"> <a href="#">	Feedback System   </a><p>Streamline feedback processes with our integrated HR services system.</p>  </div>
+          </div>
+      </div>
+    
+    </div>
+
+
+
+    
+   
+    <footer>
+        <div id="footerLogoCon"><img id="footerLogo" src="../Images/Logo03.PNG" alt=""></div>
+        <div id="footerLinksCon">
+            <a href="#">Home</a>
+            <a href="aboutsection.html">About us</a>
+            <a href="contactsection.html">Contact us</a>
+            <a href="PolicyPage.html">Policies</a>
+        </div>
+        <div id="footerIconsCon">
+            <i class="fa-brands fa-x-twitter"></i>
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-linkedin"></i>
+        </div>
+        <div id="copyright">
+            <p class="copyright">
+                Copyright &copy;2024 All rights reserved
+            </p>
+        </div>
+    </footer>
+
+
+    <!-- navbar and footer JS. DON'T change anything in them unless agreed upon with the whole team. -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="../JavaScript/navbarafter.js"></script>
+    <script src="../JavaScript/servicepage.js"></script>
+
+    <!-- your JS and/or JSON link. please create your JS file in the JS folder.-->
+
+</body>
+</html>

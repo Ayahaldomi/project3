@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar Example</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../CSS/navbar.css">
+  <link rel="stylesheet" href="../CSS/footer.css">
+ <link rel="stylesheet" href="../CSS/contactsectioncss.css">
+</head>
+<body>
+  <div id="brandAboveContainer">
+    <a id="brandAbove" href="#">Zain</a>
+</div>
+<nav class="navbarContainer navbar navbar-expand-lg navbar-light">
+    <img src="../Images/Logo03.PNG" class="navbar-brand" alt="">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fa-solid fa-bars" style="color: #ffffff;"></i></span>
+
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link white" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link white" id="service" href="servicepage.html">Services</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link white" href="aboutsection.html">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link white" href="contactsection.html">Contact Us</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item" id="loginLink">
+                <a class="nav-link white" href="login.html">Login</a>
+            </li>
+            <li class="nav-item" id="registerLink">
+                <a class="nav-link white" href="signup.html">Register</a>
+            </li>
+            <li class="nav-item dropdown" id="userDropdown" style="display: none;">
+                <a class="nav-link white dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Welcome, <span id="userName"></span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="profilePage0.html">Profile</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Logout</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+<body>
+ 
+  <section class="mt-5">
+    <div class="bg-light py-5">
+      <div class="container">
+        <div class="d-flex justify-content-between">
+          <h1 class="fw-bold">Contact us</h1>
+         
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+	<div class="contact1">
+		<div class="container-contact1">
+			<div class="contact1-pic js-tilt" data-tilt>
+				<img src="../Images/team.jpg" alt="IMG">
+
+			</div>
+
+			
+<form id="contactForm" onsubmit="saveFeedback(event)">
+  <h2>Feedback</h2>
+  <br>
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" required pattern="^[a-zA-Z ]{8,20}$" title="Name must be between 8 to 20 characters long and contain only letters and spaces">
+  <span class="error" id="nameError"></span>
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required>
+  <span class="error" id="emailError"></span>
+
+  <label for="message">Message:</label>
+  <textarea id="message" name="message" rows="4" required></textarea>
+  <label>Rate your experience?</label><br>
+  <input type="radio" id="good" name="feedback" value="good" required>
+  <label for="good">Good</label>
+  <input type="radio" id="average" name="feedback" value="average">
+  <label for="average">Average</label>
+  <input type="radio" id="bad" name="feedback" value="bad">
+  <label for="bad">Bad</label>
+  <br>
+  
+  <span class="error" id="feedbackError"></span>
+
+
+  <input type="submit" value="Submit">
+
+  
+</form>
+
+
+		</div>
+	</div>
+  
+  
+
+  <footer>
+    <div id="footerLogoCon"><img id="footerLogo" src="../Images/Logo03.PNG" alt=""></div>
+    <div id="footerLinksCon">
+        <a href="#">Home</a>
+        <a href="aboutsection.html">About us</a>
+        <a href="contactsection.html">Contact us</a>
+        <a href="PolicyPage.html">Policies</a>
+    </div>
+    <div id="footerIconsCon">
+        <i class="fa-brands fa-x-twitter"></i>
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-linkedin"></i>
+    </div>
+    <div id="copyright">
+        <p class="copyright">
+            Copyright &copy;2024 All rights reserved
+        </p>
+    </div>
+</footer>
+
+
+
+
+<!-- Bootstrap JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="../JavaScript/contactsection.js"></script>
+<script src="../JavaScript/navbarafter.js"></script>
+
+</body>
+</html>
