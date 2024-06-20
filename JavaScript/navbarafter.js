@@ -1,7 +1,7 @@
 
 
 async function getJsonUser() {
-    const response = await fetch("../oneUser.json");
+    const response = await fetch("../JSON/oneUser.json");
     const jsonUser = await response.json();
     return jsonUser;
 }
