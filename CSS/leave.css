@@ -78,6 +78,7 @@ input[type="submit"] {
     background-color: #ffffff;
     border: none;
     border-radius: 4px;
+    border: solid red 1px;
     padding: 10px 20px;
     cursor: pointer;
     /* display: block; */
@@ -259,6 +260,8 @@ button {
     overflow: hidden;
 }
 #confirm.active{
+    top: 50%;
+    left: 50%;
     opacity: 1;
     height: auto;
     transition: opacity 0.5s ease-out;

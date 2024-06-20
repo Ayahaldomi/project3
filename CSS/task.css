@@ -138,31 +138,37 @@ input[type="submit"] {
     padding: 10px 20px;
     cursor: pointer;
     display: block;
-    margin: 0 auto;
+    /* margin: 0 auto; */
 }
 .cancle {
-    background-color: red;
-    color: #ffffff;
+    color: rgb(255, 0, 0);
+    background-color: #ffffff;
     border: none;
     border-radius: 4px;
+    border: solid red 1px;
     padding: 10px 20px;
     cursor: pointer;
     /* display: block; */
-    margin: 0 auto;
+    /* margin: 0 auto; */
 }
 
 input[type="submit"]:hover {
     background-color: #e69824;
 }
 
+
 .button:hover {
     background-color: #e69824;
 }
 .cancle:hover {
-    background-color: rgb(199, 0, 0);
+    background-color: rgba(199, 0, 0, 0.556);
+    color: white;
 }
 #buttons{
     display: flex;
+    justify-content: flex-end;
+    gap: 0.3rem;
+    margin-top: 1rem;
 }
 table.table.table-hover {
     overflow-x:auto;
@@ -299,8 +305,6 @@ tr td{
 }
 #confirm{
     position: fixed;
-    top: 50%;
-    left: 50%;
     transform: translate(-50%, -50%);
     background-color: white;
     padding: 20px;
@@ -313,6 +317,8 @@ tr td{
     overflow: hidden;
 }
 #confirm.active{
+    top: 50%;
+    left: 50%;
     opacity: 1;
     height: auto;
     transition: opacity 0.5s ease-out;
