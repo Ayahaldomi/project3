@@ -29,7 +29,7 @@ async function updateUI() {
         serviceLink.classList.add('white');
         serviceLink.removeAttribute('tabindex');
         serviceLink.removeAttribute('aria-disabled');
-        serviceLink.setAttribute('href', 'https://www.example.com');
+        // serviceLink.setAttribute('href', 'https://www.example.com');
         serviceLink.style.color = 'white !important';
     } else {
         serviceLink.style.display = "none";
@@ -48,7 +48,7 @@ const logOutButton = document.getElementById("logout");
 if (logOutButton) {
     logOutButton.addEventListener('click', () => {
         sessionStorage.clear();
-        location.reload();
+        // location.reload();
     });
 }
 
