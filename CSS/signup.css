@@ -1,8 +1,8 @@
 body{
-    background-color: #F5F5F5;
+    background-color: #F5F5F5 !important;
 }
 .vh-100 {
-    background-color: white !important;
+    background-color: #F5F5F5 !important;
     height: 100vh !important;
 }
 
