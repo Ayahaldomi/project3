@@ -56,6 +56,28 @@ h1{
     height: auto;
     transition: opacity 0.5s ease-out height 0.1s;
 }
+#formEdit {
+    position: fixed;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: 3s;
+    transition: opacity 0.5s ease-out;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    
+}
+#formEdit.active{
+    top: 50%;
+    left: 50%;
+    opacity: 1;
+    height: auto;
+    transition: opacity 0.5s ease-out height 0.1s;
+}
 
 #myselect{
     width: 35%;
@@ -161,6 +183,40 @@ input[type="submit"]:hover {
     background-color: #e69824;
 }
 .cancle:hover {
+    background-color: rgba(199, 0, 0, 0.556);
+    color: white;
+}
+.buttonedit {
+    background-color: #FFA726;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    display: block;
+    /* margin: 0 auto; */
+}
+.cancleedit {
+    color: rgb(255, 0, 0);
+    background-color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    border: solid red 1px;
+    padding: 10px 20px;
+    cursor: pointer;
+    /* display: block; */
+    /* margin: 0 auto; */
+}
+
+input[type="submit"]:hover {
+    background-color: #e69824;
+}
+
+
+.button:hover {
+    background-color: #e69824;
+}
+.cancleedit:hover {
     background-color: rgba(199, 0, 0, 0.556);
     color: white;
 }

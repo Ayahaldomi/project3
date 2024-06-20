@@ -85,7 +85,7 @@
                 <th scope="col">Start date</th>
                 <th scope="col">Due date</th>
                 <th scope="col">Description</th>
-                <th scope="col">Edit</th>
+                <th scope="col">Action</th>
               </tr>
             </thead>
             <tbody>
@@ -119,16 +119,16 @@
     </div>
         <!-- end of visible body -->
         <form id="form">
-        <h3>Task For : <span id="TaskForName"></span></h3>
+        <h3>Task For : <span  id="TaskForName"></span></h3>
         <label for="taskTitle">Task title:</label>
         <input type="text" id="taskTitle" name="taskTitle" required><br>
         <div id="container">
             <div id="Dstatus">
                 <label for="status">Status:</label><br>
                 <select class="select" id="status" name="status" required>
-                    <option value="To-do">To-do</option>
-                    <option value="In Progress">In Progress</option>
-                    <option value="Done">Done</option>
+                    <option style="display: none;"  value="To-do">To-do</option>
+                    <option selected  value="In Progress">In Progress</option>
+                    <option style="display: none;" value="Done">Done</option>
                 </select>
             </div>
             <div id="Dpriority">
@@ -152,7 +152,7 @@
         <textarea id="description" name="description" rows="4" cols="50" placeholder=""></textarea><br>
         <div id="buttons">
             <input class="cancle" type="button" value="Cancel" onclick="cancel()">
-            <input  class="button" type="button" value="Submit" onclick="addRow()">
+            <input  class="button" type="button" value="Submit" onclick="addRow() ">
         </div>
     </form>
 
@@ -166,6 +166,45 @@
             </div>
         </div>
     </div>
+
+    <form id="formEdit">
+        <input type="hidden" id="rowIdEdit">
+        <h3>Edit Task For : <span id="TaskForNameedit"></span></h3>
+        <label for="taskTitle">Task title:</label>
+        <input type="text" id="taskTitleedit" name="taskTitle" required><br>
+        <div id="container">
+            <div id="Dstatus">
+                <label for="status">Status:</label><br>
+                <select class="select" id="Statusedit" name="status" required>
+                    <option value="To-do">To-do</option>
+                    <option selected value="In Progress">In Progress</option>
+                    <option value="Done">Done</option>
+                </select>
+            </div>
+            <div id="Dpriority">
+                <label for="priority">Priority:</label><br>
+                <select class="select" id="priorityedit" name="priority" required>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                </select><br>
+            </div>
+            <div>
+                <label for="startDate">Start date:</label><br>
+                <input type="date" id="startDateedit" name="startDate" required>
+                </div>
+                <div>    
+                <label for="dueDate">Due date:</label><br>
+                <input type="date" id="dueDateedit" name="dueDate" required><br><br>
+                </div>
+            </div>
+            <label for="description">Description:</label>
+            <textarea id="descriptionedit" name="description" rows="4" cols="50" placeholder=""></textarea><br>
+            <div id="buttons">
+                <input class="cancleedit" type="button" value="Cancel" onclick="canceledit()">
+                <input  class="buttonedit" type="button" value="Save Edit" id="saveBtn"  >
+            </div>
+        </form>
 
     <!-- navbar and footer JS. DON'T change anything in them unless agreed upon with the whole team. -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

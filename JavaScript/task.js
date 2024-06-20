@@ -52,7 +52,9 @@ function populateTable(dataArray) {
         newCell6.textContent = dataArray[i].start;
         newCell7.textContent = dataArray[i].dueDate;
         newCell8.textContent = dataArray[i].description;
-        newCell9.innerHTML = `<button class="delete-button" onclick="deleteRow(${newRowLocalArray[i].id}, this)"><i class="fa-solid fa-eraser" width="100" style="color: #002142;"></i></button>`;
+        newCell9.innerHTML = `
+        <button class="delete-button" onclick="editRow(${newRowLocalArray[i].id},this)"><i class="fa-solid fa-pen-to-square" style="color: #003366;"></i></button>
+        <button class="delete-button" onclick="deleteRow(${newRowLocalArray[i].id}, this)"><i class="fa-solid fa-trash" style="color: #003366;"></i></button>`;
         
         // Add scope="row" to the first cell so bootstrap work
         newCell1.setAttribute('scope', 'row'); 
@@ -114,7 +116,19 @@ function cancel() {
     var blur = document.getElementById('blur');
     blur.classList.toggle('active')
     form.classList.toggle('active');
-    body.style.overflowY = 'auto'
+    body.style.overflowY = 'auto';
+
+
+}
+function canceledit() {
+    // form.style.display = 'none';
+    // blur effect
+    var blur = document.getElementById('blur');
+    blur.classList.toggle('active')
+
+    body.style.overflowY = 'auto';
+    formEdit.classList.toggle('active');
+
 }
 // Form elements
 const itemList = document.getElementById("myselect");
@@ -181,7 +195,7 @@ function addRow() {
             var blur = document.getElementById('blur');
             blur.classList.toggle('active');
             form.classList.toggle('active');
-            body.style.overflowY = 'auto'
+            body.style.overflowY = 'auto';
             
         }
     }
@@ -213,7 +227,109 @@ function deleteRow(id, button) {
             
 }
 
-// localStorage.clear()
 
 
+function editRow(id, button) {
+    var blur = document.getElementById('blur');
+    blur.classList.toggle('active')
+    formEdit.classList.toggle('active');
+    body.style.overflowY = 'hidden';
 
+    let row = button.parentNode.parentNode;
+    // let idedit = row.dataset.id;
+    let cells = row.getElementsByTagName('td');
+
+    // Get current values
+    let name = cells[0].textContent;
+    let task = cells[2].textContent;
+    let status = cells[3].querySelector('span').textContent; // Targeting span inside the cell
+    let priority = cells[4].querySelector('span').textContent; // Targeting span inside the cell
+    let start = cells[5].textContent;
+    let dueDate = cells[6].textContent;
+    let description = cells[7].textContent;
+
+    document.getElementById('TaskForNameedit').textContent = name;
+    document.getElementById('taskTitleedit').value = task;
+    document.getElementById('Statusedit').value = status;
+    document.getElementById('priorityedit').value = priority;
+    document.getElementById('startDateedit').value = start;
+    document.getElementById('dueDateedit').value = dueDate;
+    document.getElementById('descriptionedit').value = description;
+    
+
+    let saveBtn = document.getElementById('saveBtn');
+    saveBtn.addEventListener('click', function(){
+        let taskTitleValue = document.getElementById('taskTitleedit').value;
+        let statusValue = document.getElementById('Statusedit').value;
+        let priorityValue = document.getElementById('priorityedit').value;
+        let startDateValue = document.getElementById('startDateedit').value;
+        let dueDateValue = document.getElementById('dueDateedit').value;
+        let descriptionValue = document.getElementById('descriptionedit').value;
+
+        let currentData = JSON.parse(localStorage.getItem('taskLocal')) || [];
+        let taskUpdated = false;
+        for (let i = 0; i < currentData.length; i++) {
+            if (currentData[i].id == id) {
+                currentData[i].task = taskTitleValue;
+                currentData[i].status = statusValue;
+                currentData[i].priority = priorityValue;
+                currentData[i].start = startDateValue;
+                currentData[i].dueDate = dueDateValue;
+                currentData[i].description = descriptionValue;
+                taskUpdated = true;
+                break;
+            }
+        }
+
+        if (taskUpdated) {
+            localStorage.setItem('taskLocal', JSON.stringify(currentData));
+            populateTable(newRowLocalArray);
+            window.location.reload()
+            formEdit.classList.remove('active');
+            body.style.overflowY = 'auto';
+            console.log('Task updated successfully:', currentData);
+        } else {
+            console.error('Task with id ' + id + ' not found.');
+        }
+
+
+    })
+
+    
+}
+
+// function saveEdit() {
+//     let id = document.getElementById('rowIdEdit').value;
+//     let taskTitleValue = document.getElementById('taskTitleedit').value;
+//     let statusValue = document.getElementById('Statusedit').value;
+//     let priorityValue = document.getElementById('priorityedit').value;
+//     let startDateValue = document.getElementById('startDateedit').value;
+//     let dueDateValue = document.getElementById('dueDateedit').value;
+//     let descriptionValue = document.getElementById('descriptionedit').value;
+
+//     let currentData = JSON.parse(localStorage.getItem('taskLocal')) || [];
+//     let taskUpdated = false;
+
+//     for (let i = 0; i < currentData.length; i++) {
+//         if (currentData[i].id == id) {
+//             currentData[i].task = taskTitleValue;
+//             currentData[i].status = statusValue;
+//             currentData[i].priority = priorityValue;
+//             currentData[i].start = startDateValue;
+//             currentData[i].dueDate = dueDateValue;
+//             currentData[i].description = descriptionValue;
+//             taskUpdated = true;
+//             break;
+//         }
+//     }
+
+//     if (taskUpdated) {
+//         localStorage.setItem('taskLocal', JSON.stringify(currentData));
+//         populateTable(currentData);
+//         formEdit.classList.remove('active');
+//         body.style.overflowY = 'auto';
+//         console.log('Task updated successfully:', currentData);
+//     } else {
+//         console.error('Task with id ' + id + ' not found.');
+//     }
+// }
