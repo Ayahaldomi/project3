@@ -39,12 +39,13 @@ async function updateUI() {
         document.getElementById("registerLink").style.display = "block";
         document.getElementById("userDropdown").style.display = "none";
         document.getElementById("service").style.display = "none";
-        document.getElementById("disabledORenable1").setAttribute('href', '#');
-        document.getElementById("disabledORenable2").setAttribute('href', '#');
-        document.getElementById("disabledORenable3").setAttribute('href', '#');
-        document.getElementById("disabledORenable4").setAttribute('href', '#');
-        document.getElementById("disabledORenable5").setAttribute('href', '#');
-
+        if (document.getElementById("disabledORenable1")) {
+            document.getElementById("disabledORenable1").setAttribute('href', '#');
+            document.getElementById("disabledORenable2").setAttribute('href', '#');
+            document.getElementById("disabledORenable3").setAttribute('href', '#');
+            document.getElementById("disabledORenable4").setAttribute('href', '#');
+            document.getElementById("disabledORenable5").setAttribute('href', '#');
+        }
     }
 }
 
