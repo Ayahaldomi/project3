@@ -117,6 +117,7 @@ p#name{
     padding: 0.625em;
     font-size: 0.9375em;
     font-weight: 500;
+    cursor: not-allowed;
     border: 0.0625em solid #ccc;
     border-radius: 0.3125em;
     margin-bottom: 0.625em;
@@ -194,7 +195,8 @@ p#name{
         justify-content: center;
         align-items: center;
         justify-items: center;
-        margin-left: 3em;
+        margin-bottom: 2em;
+        cursor: not-allowed;
     }
     #namePosition {
         position: relative;

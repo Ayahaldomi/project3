@@ -22,9 +22,9 @@ if (firstNameData && lastNameData && emailData && genderData) {
     let sessionCurrentUser = JSON.parse(sessionStorage.getItem('loggedInUser'));
 
 
-    //dobule check that we have data in sessionStorage
+    //double check that we have data in sessionStorage
     if (sessionCurrentUser && sessionCurrentUser.email) {
-         
+        
             if (sessionCurrentUser.email) {
                 firstNameData.value = sessionCurrentUser.firstName;
                 lastNameData.value = sessionCurrentUser.lastName;
@@ -35,7 +35,7 @@ if (firstNameData && lastNameData && emailData && genderData) {
                 emailData.value = sessionCurrentUser.email;
 
                 genderData.value = sessionCurrentUser.gender;
-              
+            
 
                 mobileData.value = sessionCurrentUser.phoneNumber;
                 dateOfJoiningData.value = sessionCurrentUser.dateOfJoining || ''
