@@ -52,11 +52,18 @@ const searchGender = document.getElementById('searchGender');
 searchName.addEventListener('keyup', function() {
     
     let val = this.value; // take the input value and save it in variable;
-    var newData = search(val, jsondata); // create a variable that calls the search func and sets the input data and jsonAPI data as the func parameters. the result of the func will be the variable value;
+    
+    const nameRegex = /^[a-zA-Z\'\-]+$/;
 
-    infoTable(newData); // fill the table func with the new data from the search;
+    if (nameRegex.test(val) !== true && val !== ''){
+        errorMessage.innerHTML = "&#8618 Numbers and special charachters are not allowed. you can use \' or - only."
+    }
+    else{
+        errorMessage.innerHTML = ' '
+        var newData = search(val, jsondata); // create a variable that calls the search func and sets the input data and jsonAPI data as the func parameters. the result of the func will be the variable value;
+        infoTable(newData); // fill the table func with the new data from the search;
+    }
 });
-
 // event for search by id
 searchID.addEventListener('keyup', function() {
     let val = this.value;

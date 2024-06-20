@@ -46,6 +46,14 @@ body {
     align-items: center;
     justify-content: flex-start;
     margin: 1em 0;
+    position: relative;
+}
+#errorMessage {
+    position: absolute;
+    top: 2.5em;
+    left: 10em;
+    color: red;
+    font-size: 0.8em;
 }
 #searchName, #searchID, #searchGender {
     width: 15em;
