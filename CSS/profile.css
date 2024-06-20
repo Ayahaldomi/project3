@@ -195,7 +195,8 @@ p#name{
         justify-content: center;
         align-items: center;
         justify-items: center;
-        margin-left: 3em;
+        margin-bottom: 2em;
+        cursor: not-allowed;
     }
     #namePosition {
         position: relative;
