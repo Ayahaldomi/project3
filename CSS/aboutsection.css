@@ -131,3 +131,7 @@ body{
       margin-left: 0px;
     }
   }
+
+  .responsive-container-block.reserved {
+    flex-wrap: wrap-reverse;
+}
