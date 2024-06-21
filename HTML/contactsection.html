@@ -63,59 +63,53 @@
 
 <body>
  
-  <section class="mt-5">
-    <div class="bg-light py-5">
-      <div class="container">
-        <div class="d-flex justify-content-between">
-          <h1 class="fw-bold">Contact us</h1>
+  
+    <h1 class="fw-bold">Contact us</h1>
          
+    <section>
+    <div class="section">
+    <div class="contact-container">
+        <div class="contact-card form-card">
+            
+            <form id="contactForm" onsubmit="saveFeedback(event)">
+                <h2>Feedback</h2>
+                <br>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required pattern="^[a-zA-Z ]{8,20}$" title="Name must be between 8 to 20 characters long and contain only letters and spaces">
+                <span class="error" id="nameError"></span>
+              
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <span class="error" id="emailError"></span>
+              
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                <div class="rate">
+                <label>Rate your experience?</label><br>
+                <input type="radio" id="good" name="feedback" value="good" required>
+                <label for="good">Excellent</label>
+                <input type="radio" id="average" name="feedback" value="average">
+                <label for="average">Good</label>
+                <input type="radio" id="bad" name="feedback" value="bad">
+                <label for="bad">Poor</label>
+                </div>
+                <br>
+                <span class="error" id="feedbackError"></span>
+              
+              
+                <input type="submit" value="Submit">
+            
+              
+                
+              </form>
         </div>
-      </div>
+        <div class="contact-card info-card">
+            <h2>Talk to us now</h2>
+            <p>Phone: <a href="tel:+1234567890">+1 234-567-890</a></p>
+            <p>Email: <a href="mailto:info@example.com">info@example.com</a></p>
+        </div>
     </div>
-  </section>
-
-
-	<div class="contact1">
-		<div class="container-contact1">
-			<div class="contact1-pic js-tilt" data-tilt>
-				<img src="../Images/team.jpg" alt="IMG">
-
-			</div>
-
-			
-<form id="contactForm" onsubmit="saveFeedback(event)">
-  <h2>Feedback</h2>
-  <br>
-  <label for="name">Name:</label>
-  <input type="text" id="name" name="name" required pattern="^[a-zA-Z ]{8,20}$" title="Name must be between 8 to 20 characters long and contain only letters and spaces">
-  <span class="error" id="nameError"></span>
-
-  <label for="email">Email:</label>
-  <input type="email" id="email" name="email" required>
-  <span class="error" id="emailError"></span>
-
-  <label for="message">Message:</label>
-  <textarea id="message" name="message" rows="4" required></textarea>
-  <label>Rate your experience?</label><br>
-  <input type="radio" id="good" name="feedback" value="good" required>
-  <label for="good">Good</label>
-  <input type="radio" id="average" name="feedback" value="average">
-  <label for="average">Average</label>
-  <input type="radio" id="bad" name="feedback" value="bad">
-  <label for="bad">Bad</label>
-  <br>
-  
-  <span class="error" id="feedbackError"></span>
-
-
-  <input type="submit" value="Submit">
-
-  
-</form>
-
-
-		</div>
-	</div>
+    </section>
   
   
 
