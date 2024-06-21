@@ -85,7 +85,7 @@
                 <th scope="col">Reasons for leave:</th>
                 <th scope="col">Start date</th>
                 <th scope="col">End date</th>
-                <th scope="col">Edit</th>
+                <th scope="col">Action</th>
               </tr>
             </thead>
             <tbody>
@@ -185,6 +185,63 @@
                 <button id="rowOk" class="ok">OK</button>
             </div>
         </div>
+    </div>
+
+
+    <div class="form-containeredit" id="formEdit">
+        <h1 id="h1">Leave For : <span id="leaveForNameedit"></span></h1>
+        <form>
+            <label for="leaveType">Type Of Leave:</label>
+            <select id="leaveTypeedit">
+                <option value="Sick Leave" selected>Sick Leave</option>
+                <option value="Annual Leave" >Annual Leave</option>
+                <option value="Casual Leave" >Casual Leave</option>
+                <option value="Compassionate Leave" >Compassionate Leave</option>
+                <option value="Paid Time Off (PTO)" >Paid Time Off (PTO)</option>
+                <option value="Unpaid Leave" >Unpaid Leave</option>
+                <option value="Miscellaneous Leave" >Miscellaneous Leave</option>
+            </select>
+
+            <label for="reasonForLeave">Reasons for leave:</label>
+            <input type="text" id="reasonForLeaveedit" placeholder="">
+
+            <div class="radio-group">
+                <input type="radio" id="radio1edit" name="radio" onchange="enableedit()"/>
+                <label for="radio1">Full day leave</label>
+            </div>
+
+            <div class="input-group">
+                <div>
+                    <label for="dayDate1">Start Date</label>
+                    <input disabled type="date" id="dayDate1edit" placeholder="input date">
+                </div>
+                <div>
+                    <label for="dayDate2">End Date</label>
+                    <input disabled type="date" id="dayDate2edit" placeholder="input date">
+                </div>
+            </div>
+
+            <div class="radio-group">
+                <input type="radio" id="radio2edit" name="radio" onchange="enableedit()"/>
+                <label for="radio2">Hourly leave</label>
+            </div>
+
+            <div class="input-group">
+                <div>
+                    <label for="hourTime1">Start Date</label>
+                    <input disabled type="time" id="hourTime1edit" placeholder="input time">
+                </div>
+                <div>
+                    <label for="hourTime2">End Date</label>
+                    <input disabled type="time" id="hourTime2edit" placeholder="input time">
+                </div>
+            </div>
+
+            <div class="button-group">
+                <input class="cancleedit" type="button" value="Cancel" onclick="canceledit()">
+                <input  class="buttonedit" type="button" value="Save Edit" id="saveBtn"  >
+            </div>
+        </form>
     </div>
     <!-- navbar and footer JS. DON'T change anything in them unless agreed upon with the whole team. -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

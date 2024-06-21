@@ -96,6 +96,39 @@ input[type="submit"]:hover {
     background-color: rgba(199, 0, 0, 0.556);
     color: white;
 }
+.buttonedit {
+    background-color: #FFA726;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    /* display: block; */
+    /* margin: 0 auto; */
+}
+.cancleedit {
+    color: rgb(255, 0, 0);
+    background-color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    border: solid red 1px;
+    padding: 10px 20px;
+    cursor: pointer;
+    /* display: block; */
+    /* margin: 0 auto; */
+}
+
+input[type="submit"]:hover {
+    background-color: #e69824;
+}
+
+.buttonedit:hover {
+    background-color: #e69824;
+}
+.cancleedit:hover {
+    background-color: rgba(199, 0, 0, 0.556);
+    color: white;
+}
 #buttons{
     display: flex;
 } 
@@ -150,6 +183,27 @@ tr td{
     overflow: hidden;
 }
 .form-container.active {
+    opacity: 1;
+    height: auto;
+    transition: opacity 0.5s ease-out;
+}
+.form-containeredit {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 550px;
+    width: 100%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.5s ease-out;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+}
+.form-containeredit.active {
     opacity: 1;
     height: auto;
     transition: opacity 0.5s ease-out;

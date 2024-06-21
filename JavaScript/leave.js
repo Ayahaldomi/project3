@@ -51,7 +51,9 @@ function populateTable(dataArray) {
         
         newCell5.textContent = dataArray[i].start;
         newCell6.textContent = dataArray[i].dueDate;
-        newCell7.innerHTML = `<button class="delete-button" onclick="deleteRow(${newRowLocalArray[i].id}, this)"><i class="fa-solid fa-eraser" width="100" style="color: #002142;"></i></button>`;
+        newCell7.innerHTML = `
+        <button class="delete-button" onclick="editRow(${newRowLocalArray[i].id},this)"><i class="fa-solid fa-pen-to-square" style="color: #003366;"></i></button>
+        <button class="delete-button" onclick="deleteRow(${newRowLocalArray[i].id}, this)"><i class="fa-solid fa-trash" style="color: #003366;"></i></button>`;
         
         // Add scope="row" to the first cell so bootstrap work
         newCell1.setAttribute('scope', 'row'); 
@@ -75,6 +77,32 @@ function enable() {
    }else{
     hourTime1.disabled = true;
     hourTime2.disabled = true;
+   }
+}
+const dayDate1edit = document.getElementById("dayDate1edit");
+const dayDate2edit = document.getElementById("dayDate2edit");
+const hourTime1edit = document.getElementById("hourTime1edit");
+const hourTime2edit = document.getElementById("hourTime2edit");
+function enableedit() {
+    var radio1edit = document.getElementById('radio1edit')
+    var radio2edit = document.getElementById('radio2edit')
+   if  (radio1edit.checked){
+    dayDate1edit.disabled = false;
+    dayDate2edit.disabled = false;
+   }else{
+    dayDate1edit.disabled = true;
+    dayDate1edit.value = ''
+    dayDate2edit.disabled = true;
+    dayDate2edit.value = ''
+   }
+   if  (radio2edit.checked){
+    hourTime1edit.disabled = false;
+    hourTime2edit.disabled = false;
+   }else{
+    hourTime1edit.disabled = true;
+    hourTime1edit.value = '';
+    hourTime2edit.disabled = true;
+    hourTime2edit.value = '';
    }
 }
 
@@ -107,6 +135,13 @@ function cancel() {
     var containerForAll = document.getElementById('containerForAll');
     containerForAll.classList.toggle('active');
     form.classList.toggle('active');
+    body.style.overflowY = 'auto'
+}
+function canceledit() {
+    // blur effect
+    var containerForAll = document.getElementById('containerForAll');
+    containerForAll.classList.toggle('active');
+    formEdit.classList.toggle('active');
     body.style.overflowY = 'auto'
 }
 // Form elements
@@ -176,6 +211,8 @@ function deleteRow(id, button) {
     let rowCancel = document.getElementById('rowCancel');
     let rowOk = document.getElementById('rowOk');
     confirm.classList.toggle('active');
+    var containerForAll = document.getElementById('containerForAll');
+            containerForAll.classList.toggle('active');
 
     
     rowOk.addEventListener('click', function() {
@@ -194,10 +231,80 @@ function deleteRow(id, button) {
 
     rowCancel.addEventListener('click', function() {
         confirm.classList.toggle('active');
+        var containerForAll = document.getElementById('containerForAll');
+            containerForAll.classList.toggle('active');
         
 
     });
            
 }
 
+function editRow(id, button) {
+    var containerForAll = document.getElementById('containerForAll');
+    containerForAll.classList.toggle('active');
+    formEdit.classList.toggle('active');
+    body.style.overflowY = 'hidden';
+
+    let row = button.parentNode.parentNode;
+    // let idedit = row.dataset.id;
+    let cells = row.getElementsByTagName('td');
+
+
+    let name = cells[0].textContent;
+    let leaveType = cells[2].textContent;
+    let reasonForLeave = cells[3].textContent;
+    let startDateTime = cells[4].textContent.split('T');
+    let dueDateTime = cells[5].textContent.split('T');
+
+    let start = startDateTime[0]; // Extract date part
+    let hourTime1 = startDateTime[1] || ''; // Extract time part, default to empty string if undefined
+    let dueDate = dueDateTime[0]; // Extract date part
+    let hourTime2 = dueDateTime[1] || ''; // Extract time part, default to empty string if undefined
+
+   
+    document.getElementById('leaveForNameedit').textContent = name;
+    document.getElementById('leaveTypeedit').value = leaveType;
+    document.getElementById('reasonForLeaveedit').value = reasonForLeave;
+    document.getElementById('dayDate1edit').value = start;
+    document.getElementById('hourTime1edit').value = hourTime1;
+    document.getElementById('dayDate2edit').value = dueDate;
+    document.getElementById('hourTime2edit').value = hourTime2;
+   
+
+    let saveBtn = document.getElementById('saveBtn');
+    saveBtn.addEventListener('click', function(){
+        let leaveTypeValue = document.getElementById('leaveTypeedit').value;
+    let reasonForLeaveValue = document.getElementById('reasonForLeaveedit').value;
+    let dayDate1Value = document.getElementById('dayDate1edit').value;
+    let hourTime1Value = document.getElementById('hourTime1edit').value || ''; // Handle undefined or empty time value
+    let dayDate2Value = document.getElementById('dayDate2edit').value;
+    let hourTime2Value = document.getElementById('hourTime2edit').value || ''; // Handle undefined or empty time value
+
+    let currentData = JSON.parse(localStorage.getItem('leavelocal')) || [];
+        leaveupdate = false;
+    for (let i = 0; i < currentData.length; i++) {
+        if (currentData[i].id == id) {
+            currentData[i].leaveType = leaveTypeValue;
+            currentData[i].reasonForLeave = reasonForLeaveValue;
+            currentData[i].start = dayDate1Value + (hourTime1Value ? 'T' + hourTime1Value : '');
+            currentData[i].dueDate = dayDate2Value + (hourTime2Value ? 'T' + hourTime2Value : '');
+            leaveupdate = true;
+            break;
+        }
+    }
+
+        if (leaveupdate) {
+            localStorage.setItem('leavelocal', JSON.stringify(currentData));
+            populateTable(newRowLocalArray);
+            window.location.reload()
+            console.log('leavelocal updated successfully:', currentData);
+        } else {
+            console.error('Task with id ' + id + ' not found.');
+        }
+
+
+    })
+
+    
+}
 

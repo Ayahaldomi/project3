@@ -298,38 +298,4 @@ function editRow(id, button) {
     
 }
 
-// function saveEdit() {
-//     let id = document.getElementById('rowIdEdit').value;
-//     let taskTitleValue = document.getElementById('taskTitleedit').value;
-//     let statusValue = document.getElementById('Statusedit').value;
-//     let priorityValue = document.getElementById('priorityedit').value;
-//     let startDateValue = document.getElementById('startDateedit').value;
-//     let dueDateValue = document.getElementById('dueDateedit').value;
-//     let descriptionValue = document.getElementById('descriptionedit').value;
 
-//     let currentData = JSON.parse(localStorage.getItem('taskLocal')) || [];
-//     let taskUpdated = false;
-
-//     for (let i = 0; i < currentData.length; i++) {
-//         if (currentData[i].id == id) {
-//             currentData[i].task = taskTitleValue;
-//             currentData[i].status = statusValue;
-//             currentData[i].priority = priorityValue;
-//             currentData[i].start = startDateValue;
-//             currentData[i].dueDate = dueDateValue;
-//             currentData[i].description = descriptionValue;
-//             taskUpdated = true;
-//             break;
-//         }
-//     }
-
-//     if (taskUpdated) {
-//         localStorage.setItem('taskLocal', JSON.stringify(currentData));
-//         populateTable(currentData);
-//         formEdit.classList.remove('active');
-//         body.style.overflowY = 'auto';
-//         console.log('Task updated successfully:', currentData);
-//     } else {
-//         console.error('Task with id ' + id + ' not found.');
-//     }
-// }
