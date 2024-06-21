@@ -1,74 +1,77 @@
-const employeesInfoAPI = 'https://666f2849f1e1da2be5222215.mockapi.io/date';
-
+const employeesInfoAPI = '../JSON/employees.json';
+let currentPage = 1;
+const cardsPerPage = 6;
+let localDataName
 
 async function loadData() {
-    let jsonData
-
+    localDataName = JSON.parse(localStorage.getItem('feedbacks'));
+    let jsonData;
     const employeeData = await fetch(employeesInfoAPI); 
-    console.log('test')
     jsonData = await employeeData.json();
-    // console.log(jsonData)
-
-    let localDataName = JSON.parse(localStorage.getItem('feedbacks'));
 
 
-    function feedbackCards(json, local) {
+    localDataName.reverse();
 
+    function feedbackCards(json, local, page) {
         let cardsContainer = document.getElementById('cardsContainer'); 
-        
         cardsContainer.innerHTML = ''; 
 
-        console.log(json)
+        let startIndex = (page - 1) * cardsPerPage;
+        let endIndex = Math.min(startIndex + cardsPerPage, local.length);
 
-        for (let i = local.length - 1; i > local.length - 7; i--) {
-
+        for (let i = startIndex; i < endIndex; i++) {
             let localName = local[i].name.toLowerCase();
-            let imageSRC;
+            let imageSRC = getImageSrc(json, localName);
 
-            
-
-            
-
-                function imageGetSRC(json) {
-
-                    for (let a = 0; a < json.length; a++) {
-                    let jsonName = json[a].name.toLowerCase();
-                    
-                    if (jsonName === localName) {
-                        imageSRC = json[a].Image
-                        console.log('esg')
-                        // console.log(imageSRC)
-                        return imageSRC
-                        // return allImg = imageSRC[a]
-                    }
-                    // else {
-                    //     imageSRC = 'images/default-avatar-icon-of-social-media-user-vector.jpg'
-                    //     return imageSRC
-                    // }
-                }
-                }
-                console.log(imageGetSRC(json))
-                
-           
-
-            
             let row = `<div class="card">
                 <div class="header">
                 <div class="cornerImage">
-                    <img src="${imageGetSRC(json)}"  alt="" class="feedbackImage">
+                    <img src="${imageSRC}" alt="" class="feedbackImage">
                 </div>
                 <p class="cardTitle">${local[i].name}</p>
                 </div>
                 <p class="smallDesc">${local[i].message}</p>
             </div>`;
             
-            
-            
             cardsContainer.innerHTML += row;
+        }
 
-        };
+        updatePagination(local.length, page);
     }
-    feedbackCards(jsonData, localDataName)
 
-};
+    function getImageSrc(json, localName) {
+        for (let a = 0; a < json.length; a++) {
+            let jsonName = json[a].name.toLowerCase();
+            if (jsonName === localName) {
+                return json[a].Image;
+            }
+        }
+        return 'images/default-avatar-icon-of-social-media-user-vector.jpg'; // Default image if not found
+    }
+
+    function updatePagination(totalItems, page) {
+        let totalPages = Math.ceil(totalItems / cardsPerPage);
+        document.getElementById('pageInfo').innerText = `Page ${page} of ${totalPages}`;
+        document.getElementById('prevPage').disabled = page === 1;
+        document.getElementById('nextPage').disabled = page === totalPages;
+    }
+
+    feedbackCards(jsonData, localDataName, currentPage);
+}
+
+function prevPage() {
+    if (currentPage > 1) {
+        currentPage--;
+        loadData();
+    }
+}
+
+function nextPage() {
+    localDataName = JSON.parse(localStorage.getItem('feedbacks'));
+    if (currentPage < Math.ceil(localDataName.length / cardsPerPage)) {
+        currentPage++;
+        loadData();
+    }
+}
+
 loadData()

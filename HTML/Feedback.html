@@ -65,10 +65,14 @@
     </nav>
 
     <!-- your HTML --><!-- please remove the div first -->
-     <h1>Employee's Feedback</h1>
-     <a id="toGoback" href="servicepage.html"><button id="backbtn"> <i id="backarrow" class="fa-solid fa-chevron-left" style="color: #ffa726;"></i>Back</button></a>
-     <div id="cardsContainer">
-     </div>
+    <h1>Employee's Feedback</h1>
+    <a id="toGoback" href="servicepage.html"><button id="backbtn"> <i id="backarrow" class="fa-solid fa-chevron-left" style="color: #ffa726;"></i>Back</button></a>
+    <div id="paginationContainer">
+       <button id="prevPage" onclick="prevPage()">Previous</button>
+       <span id="pageInfo"></span>
+       <button id="nextPage" onclick="nextPage()">Next</button>
+   </div>
+   <div id="cardsContainer"></div>
 
     <!-- footer HTML. DON'T change anything here unless agreed upon with the whole team. -->
     <footer>

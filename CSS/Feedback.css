@@ -142,4 +142,27 @@ h1 {
 }
 
 }
+#paginationContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#paginationContainer button {
+  background-color: #f1f1f1;
+  border: 1px solid #FFA726;
+  color: #FFA726;
+  font-size: 1.2em;
+  font-weight: 500;
+  width: 120px;
+  height: 2em;
+  border-radius: 0.7em;
+  margin: 0 10px;
+}
+
+#pageInfo {
+  font-size: 1.2em;
+  font-weight: 500;
+}
   
