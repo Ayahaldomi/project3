@@ -1,3 +1,25 @@
+window.onload = function () {
+    let adminEmail = prompt ("plz enter the admin email")
+
+    if (adminEmail == "mfawareh1@gmail.com" ) {
+      let adminPassword = prompt ("Plz enter the admin password")
+      if (adminPassword == "2016975037") {
+        alert ("You can register")
+      }
+
+      else {
+
+        alert ("You can't register")
+        window.location.href = "../index.html"
+      }
+    }
+    else {
+         alert ("You can't register")
+        window.location.href = "../index.html"
+    }
+}
+
+
 var regName = /^[a-zA-Z]+$/; 
 var regEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
