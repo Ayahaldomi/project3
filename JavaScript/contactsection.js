@@ -5,7 +5,8 @@ function saveFeedback(event) {
     // Validate name
     var nameInput = document.getElementById('name');
     var nameError = document.getElementById('nameError');
-    var nameRegex = /^[a-zA-Z ]{8,20}$/;
+    var nameRegex = /^[A-Za-z]+([ .-][A-Za-z]+)*$/;
+
     if (!nameRegex.test(nameInput.value)) {
         nameError.textContent = "Name must be between 8 to 20 characters long and contain only letters and spaces";
         return;
