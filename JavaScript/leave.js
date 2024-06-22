@@ -256,10 +256,10 @@ function editRow(id, button) {
     let startDateTime = cells[4].textContent.split('T');
     let dueDateTime = cells[5].textContent.split('T');
 
-    let start = startDateTime[0]; // Extract date part
-    let hourTime1 = startDateTime[0]// Extract time part, default to empty string if undefined
-    let dueDate = dueDateTime[0]; // Extract date part
-    let hourTime2 = dueDateTime[0]  // Extract time part, default to empty string if undefined
+    let start = startDateTime; 
+    let hourTime1 = startDateTime;
+    let dueDate = dueDateTime; 
+    let hourTime2 = dueDateTime ; 
 
    
     document.getElementById('leaveForNameedit').textContent = name;
