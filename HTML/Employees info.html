@@ -74,26 +74,26 @@
             <input type="text" name="searchName" id="searchName" placeholder="Name"> 
             <input type="number" name="searchID" id="searchID" placeholder="Social security number">
             <select name="gender" id="searchGender">
-                <option value="none" selected disabled hidden>select gender</option>
+                <option value="none" >select gender</option>
                 <option value="female">Female</option>
                 <option value="male">Male</option>
             </select>
             <span id="errorMessage"></span>
         </div>
 
-        <div id="tableContainer">
+        <div id="tableContainer" style="overflow: auto;">
             
-            <table id="employeesInfo" class="table table-hover table-responsive table-striped ">
-                <thead id="header">
+            <table id="employeesInfo" class="table table-hover">
+                <thead id="header" style="position: sticky;top: 0; background-color: white;">
                     <tr>
-                        <th class="desc" value="desc"></th>
-                        <th class="desc" value="socialNumber">Social security number <span class="sortIcon"><i class="fa-solid fa-sort"></i></span></th>
-                        <th class="desc" value="name">Full name <span class="sortIcon"> <i class="fa-solid fa-sort"></i> </span></th>
-                        <th class="desc" value="gender">Gender <span class="sortIcon"><i class="fa-solid fa-sort"></i></span></th>
-                        <th class="desc" value="address">Address <span class="sortIcon"><i class="fa-solid fa-sort"></i></span></th>
-                        <th class="desc" value="maritalStatus">Marital status <span class="sortIcon"><i class="fa-solid fa-sort"></i></span></th>
-                        <th class="desc" value="DateOfEmployment">Date of employment <span class="sortIcon"><i class="fa-solid fa-sort"></i></span></th>
-                        <th class="desc" value="email">E-mail <span class="sortIcon"><i class="fa-solid fa-sort"></i></span></th>
+                        <th class="normal" value="none"></th>
+                        <th class="normal" value="socialNumber">Social security number <span class="sortIcon"><i class="fa-solid fa-sort"></i></span></th>
+                        <th class="normal" value="name">Full name <span class="sortIcon"> <i class="fa-solid fa-sort"></i> </span></th>
+                        <th class="normal" value="gender">Gender <span class="sortIcon"><i class="fa-solid fa-sort"></i></span></th>
+                        <th class="normal" value="address">Address <span class="sortIcon"><i class="fa-solid fa-sort"></i></span></th>
+                        <th class="normal" value="maritalStatus">Marital status <span class="sortIcon"><i class="fa-solid fa-sort"></i></span></th>
+                        <th class="normal" value="DateOfEmployment">Date of employment <span class="sortIcon"><i class="fa-solid fa-sort"></i></span></th>
+                        <th class="normal" value="email">E-mail <span class="sortIcon"><i class="fa-solid fa-sort"></i></span></th>
                     </tr>
                 </thead>
                 <tbody id="information">

@@ -40,7 +40,10 @@ if (firstNameData && lastNameData && emailData && genderData) {
                 mobileData.value = sessionCurrentUser.phoneNumber;
                 dateOfJoiningData.value = sessionCurrentUser.dateOfJoining || ''
             
-                imageData.src = sessionCurrentUser.imageSrc || "../Images/pexels-olly-927451.jpg"
+                // imageData.src = sessionCurrentUser.imageSrc || "../Images/pexels-olly-927451.jpg"
+                if (sessionCurrentUser.email == "mfawareh1@gmail.com"){
+                    document.getElementById('yourImg').src = '../Images/aboutimg/mohammad.jpeg'
+                }
 
 
             }

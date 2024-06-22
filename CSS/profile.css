@@ -30,6 +30,7 @@ div #container {
     /* margin-left: 3em; */
     /* width: 20em; */
     height: 10em !important;
+    
 }
 #content {
     /* width: 20em; */
@@ -38,19 +39,23 @@ div #container {
     color: white;
     margin-left: 1em;
     height: 10em !important;
-    cursor: pointer;
+    width: 20em ;
+    height: 20em;
 }
 #content span{
     font-weight: 650;
     text-align: center;
+
 }
 #content p{
     font-weight: 100 ;
 }
 #yourImg {
-    position: relative;
+    /* position: relative;
     width: 0.5em;
-    height: 3em;
+    height: 3em; */
+    width: 20em ;
+    height: 20em;
 }
 #namePosition {
     position: relative;
@@ -60,8 +65,8 @@ div #container {
     margin-bottom: -0.57em;
     padding-top: 1em;
     padding-bottom: 1em;
-    width: 0.5em;
-    height: 2em;
+    /* width: 0.5em;
+    height: 2em; */
 }
 p#name{
     font-size: x-large;
@@ -69,7 +74,7 @@ p#name{
 }
 
 
-#details{
+/* #details{
     background-color: #003366;
     height: 2em;
     width: 4em;
@@ -96,7 +101,7 @@ p#name{
     height: 6.625em;
 }
 
-
+ */
 
 /* Additional Form Styles */
 #form-container {

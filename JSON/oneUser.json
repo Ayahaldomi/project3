@@ -7,5 +7,6 @@
     "gender": "",
     "hrID" : "",
     "isLoggedIn": true,
-    "phoneNumber" : ""
+    "phoneNumber" : "",
+    "img": "../Images/0733ba760b29378474dea0fdbcb97107.jpg"
 }
