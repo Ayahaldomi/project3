@@ -14,9 +14,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/> 
 </head>
 <body>
-<div id="blur">
+    <div id="blur">
         <!-- navbar HTML. DON'T change anything here unless agreed upon with the whole team. -->
-
         <nav class="navbarContainer navbar navbar-expand-lg navbar-light">
             <img src="../Images/Logo03.PNG" class="navbar-brand" alt="">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -64,9 +63,10 @@
         <div id="ahmad">
             <div id="container ">
                 <section id="content">
-                    <img id="yourImg" src="../Images/pexels-olly-927451.jpg" alt="">
+                    <button id="details">Details</button>
+                    <img src="../Images/pexels-olly-927451.jpg" id="yourImg" alt="">
                     <div id="namePosition">
-                        <p class="fullName" id="name" class="namee"></p>
+                        <p class="fullName" id="name"></p>
                         <p id="position">HR Manager at Zain</p>
                     </div>
                     <!-- <div id="genderAge">
@@ -112,7 +112,7 @@
                                 <input disabled type="text" id="dateOfJoin" name="input7" required value="">
                             </div>
                             <div class="divs">
-                                <label class="labels" for="mobile">Mobile:</label>
+                                <label class="labels" for="mobile">Phone Number:</label>
                                 <input disabled type="text" id="mobile" name="input8" required value="">
                             </div>
                             <div class="divs">
@@ -155,27 +155,44 @@
 </div>
     <div id="container2">
         <div class="form">
-            <h2>Edit HR Profile</h2>
+            <h2 id="EditTitle">Edit Profile</h2>
             <form>
                 <label for="firstNameEdit">First Name:</label>
-                <input type="text" id="firstNameEdit" name="name" value="">
+                <input type="text" id="firstNameEdit" name="name" value="" placeholder="Your First Name">
+                <!-- <p id="validationResult"></p> -->
                 <label for="lastNameEdit">Last Name:</label>
-                <input type="text" id="lastNameEdit" name="title" value="">
+                <input type="text" id="lastNameEdit" name="title" value="Your Last Name" placeholder="Your Last Name">
                 <label for="phoneEdit">Phone:</label>
-                <input type="tel" id="phoneEdit" name="phone" value="" placeholder="07">
+                <input type="tel" id="phoneEdit" name="phone" value="" placeholder="Your Phone Number">
                 <label for="emailEdit">Email:</label>
                 <input type="email" id="emailEdit" name="email" value="" placeholder="example@gmail.com">
                 <label for="dateOfJoiningEdit">Date Of Joining:</label>
                 <input type="text" id="dateOfJoiningEdit" name="dateOfJoining" value="" placeholder="dd/mm/yyyy">
-                <label for="genderEdit">Gender:</label>
-                <input type="text" id="genderEdit" name="gender" value="" placeholder="male/female">
-                <label for="imageEdit">ImageURL:</label>
-                <input type="text" id="imageEdit" name="gender" value=""  >
-                <input id="cancel" onclick="saveChange()" type="submit" value=" Cancel ">
+                <!-- <label for="genderEdit">Gender:</label>
+                <select name="gender" id="gd">
+                    <optgroup label="gender">
+                        <option value="1" selected> female </option>
+                        <option value="0" selected> male </option>
+                    </optgroup>
+                </select>
+                <br> -->
+                <br>
+                <div class="genderr">
+                    <p>Gender:</p>
+                    <div id="MAFE">
+                        <input id="FE" type="radio" name="gender" value="Female">
+                        <label for="FE">Female</label>
+                        <input id="MA" type="radio" name="gender" value="Male">
+                        <label for="MA">Male</label>
+                    </div>
+                </div> 
+                <!-- <label for="imageEdit">ImageURL:</label> -->
+                <!-- <input type="text" id="imageEdit" name="gender" value=""  -->
+                <input id="cancel" onclick="saveChange()" type="button" value=" Cancel ">
                 <input id="change" onclick="saveChange()" type="submit" value="Save Changes">
             </form>
         </div>
-    </div>
+    </div>   
 
 
         <!-- navbar and footer JS. DON'T change anything in them unless agreed upon with the whole team. -->
