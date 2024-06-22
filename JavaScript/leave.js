@@ -273,12 +273,12 @@ function editRow(id, button) {
 
     let saveBtn = document.getElementById('saveBtn');
     saveBtn.addEventListener('click', function(){
-        let leaveTypeValue = document.getElementById('leaveTypeedit').value;
+    let leaveTypeValue = document.getElementById('leaveTypeedit').value;
     let reasonForLeaveValue = document.getElementById('reasonForLeaveedit').value;
     let dayDate1Value = document.getElementById('dayDate1edit').value;
-    let hourTime1Value = document.getElementById('hourTime1edit').value || ''; // Handle undefined or empty time value
+    let hourTime1Value = document.getElementById('hourTime1edit').value || '';
     let dayDate2Value = document.getElementById('dayDate2edit').value;
-    let hourTime2Value = document.getElementById('hourTime2edit').value || ''; // Handle undefined or empty time value
+    let hourTime2Value = document.getElementById('hourTime2edit').value || ''; 
 
     let currentData = JSON.parse(localStorage.getItem('leavelocal')) || [];
         leaveupdate = false;
