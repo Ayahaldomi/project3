@@ -69,7 +69,7 @@ loginButton.addEventListener('click', async function () {
 
             sessionStorage.setItem('loggedInUser', JSON.stringify(loggedInUser))
 
-            alert('Login Successful');
+
             window.location.href = "../index.html";
 
             

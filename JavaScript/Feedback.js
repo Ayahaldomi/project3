@@ -46,7 +46,7 @@ async function loadData() {
                 return json[a].Image;
             }
         }
-        return 'images/default-avatar-icon-of-social-media-user-vector.jpg'; // Default image if not found
+
     }
 
     function updatePagination(totalItems, page) {

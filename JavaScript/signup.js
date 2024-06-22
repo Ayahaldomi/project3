@@ -134,7 +134,7 @@ registerButton.addEventListener('click', function () {
         valid = false;
     }
 
-    else if (passInput.length >= 20) {
+    else if (passInput.length > 20) {
         passError.innerHTML = "Enter a password less than 20 chars";
         valid = false;
     }
@@ -185,7 +185,6 @@ registerButton.addEventListener('click', function () {
 
      
         
-        alert('Successful Registration');
         window.location.href = "../HTML/login.html" ;
     } }
 });
