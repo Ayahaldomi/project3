@@ -54,8 +54,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const collapsedData = document.getElementById('collapsedData');
 
   async function getData() {
-    const response = await fetch('JSON/privcy.json'); 
-    // console.log (response);
+    const response = await fetch('../JSON/privcy.json');
+        // console.log (response);
 
       const data = await response.json();
       // console.log(data);
