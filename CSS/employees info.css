@@ -50,6 +50,8 @@ body {
     justify-content: flex-start;
     margin: 1em 0;
     position: relative;
+    margin-left: 60px;
+
 }
 #errorMessage {
     position: absolute;
@@ -101,7 +103,7 @@ tr td{
     text-align:left;
     border-radius: 0.7em;
     margin-bottom: 0.5em;
-    margin-left:0.9em;
+    margin-left: 3.9em;
     /* position:absolute;
   left: 0.5em;
     top:12.5em; */
@@ -127,6 +129,28 @@ tr td{
 }
 @media screen and (max-width: 426px){
     #searchContainer {
-             justify-content: flex-end;
+        justify-content: center;
     }
+    #tableContainer{
+            display: flex;
+            width: auto;
+            justify-content: flex-start;
+            /* MARGIN: auto; */
+            align-items: baseline;
+            
+        }
+        #tableContainer {
+            height: 500px;
+            margin-bottom: 20px;
+            width: 120%;
+        }
+        .navbarContainer{
+            width: 120%;
+    
+        }
+        footer {
+            width: 120%;
+        }
+    
+    
 }

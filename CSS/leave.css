@@ -370,4 +370,10 @@ button {
    }
 
  }
+ @media screen and (max-width: 426px) {
+body{
+    width: 120%;
+}
+
+  }
 

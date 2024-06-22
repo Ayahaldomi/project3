@@ -327,6 +327,29 @@ tr td{
     }
 
   }
+@media screen and (max-width: 426px) {
+    #addTaskSelect{
+        display: flex;
+        width: auto;
+        justify-content: flex-start;
+        /* MARGIN: auto; */
+        align-items: baseline;
+        
+    }
+    div#table-div {
+        height: 500px;
+        margin-bottom: 20px;
+        width: 120%;
+    }
+    .navbarContainer{
+        width: 120%;
+
+    }
+    footer {
+        width: 120%;
+    }
+
+  }
 
   #zain{
     width: 300px;

@@ -60,5 +60,11 @@ margin-bottom: 1em;
     height: 300px;
     width: 500px;
 }
+@media screen and (max-width: 426px) {
+
+    footer {
+        width: 120%;
+    }
+}
 
 
