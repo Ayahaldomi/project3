@@ -60,13 +60,14 @@ function populateTable(dataArray) {
         
     }
 }
-var date = new Date();
+
 function enable() {
     var radio1 = document.getElementById('radio1')
-    var radio2 = document.getElementById('radio2')
+    var radio2 = document.getElementById('radio2');
+    const today = new Date().toISOString().split('T')[0];
    if  (radio1.checked){
     dayDate1.disabled = false;
-    dayDate1.valueAsDate = new Date();
+    dayDate1.setAttribute("min", today)
     
     dayDate2.disabled = false;
    }else{
@@ -75,7 +76,7 @@ function enable() {
    }
    if  (radio2.checked){
     hourTime1.disabled = false;
-    hourTime1.value = date.toISOString().substring(11,16);
+    hourTime1.value = new Date().toString().substring(16,21);
     hourTime2.disabled = false;
    }else{
     hourTime1.disabled = true;
@@ -156,6 +157,23 @@ const dayDate2 = document.getElementById("dayDate2");
 const hourTime1 = document.getElementById("hourTime1");
 const hourTime2 = document.getElementById("hourTime2");
 var form = document.getElementById("form");
+
+function searchTasks() {
+    let searchTerm = document.getElementById('search-bar').value.toLowerCase();
+    let filteredTasks = newRowLocalArray.filter(task => task.name.toLowerCase().includes(searchTerm));
+    clearTable();
+    populateTable(filteredTasks);
+}
+
+// Function to clear the current table
+function clearTable() {
+    const taskTable = document.getElementById("task-table");
+    // Start from index 1 to keep the header row intact
+    let rowCount = taskTable.rows.length;
+    for (let i = rowCount - 1; i > 0; i--) {
+        taskTable.deleteRow(i);
+    }
+}
 
 dayDate1.addEventListener("click", function() {
     // Get the current value of startDate input
@@ -310,18 +328,17 @@ function editRow(id, button) {
         }
     }
 
-        if (leaveupdate) {
+        
             localStorage.setItem('leavelocal', JSON.stringify(currentData));
             populateTable(newRowLocalArray);
             window.location.reload()
-            console.log('leavelocal updated successfully:', currentData);
-        } else {
-            console.error('Task with id ' + id + ' not found.');
-        }
+
+
 
 
     })
 
-    
+      
 }
+
 

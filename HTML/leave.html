@@ -73,6 +73,8 @@
             
         </select>
         <input id="add" type="submit" value="Add A Leave" onclick="addLeave()" >
+        <p>Search by name :</p>
+            <input type="text" name="searchName" id="search-bar" placeholder="Name" oninput="searchTasks()"> 
     </div> 
         
           <div style="overflow: auto;" id="table-div">
@@ -148,7 +150,7 @@
             <div class="input-group">
                 <div>
                     <label for="dayDate1">Start Date</label>
-                    <input disabled type="date" id="dayDate1" placeholder="input date">
+                    <input disabled type="date" id="dayDate1" placeholder="input date" >
                 </div>
                 <div>
                     <label for="dayDate2">End Date</label>

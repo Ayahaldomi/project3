@@ -151,6 +151,23 @@ const description = document.getElementById("description");
 var form = document.getElementById("form");
 
 
+function searchTasks() {
+    let searchTerm = document.getElementById('search-bar').value.toLowerCase();
+    let filteredTasks = newRowLocalArray.filter(task => task.name.toLowerCase().includes(searchTerm));
+    clearTable();
+    populateTable(filteredTasks);
+}
+
+// Function to clear the current table
+function clearTable() {
+    const taskTable = document.getElementById("task-table");
+    // Start from index 1 to keep the header row intact
+    let rowCount = taskTable.rows.length;
+    for (let i = rowCount - 1; i > 0; i--) {
+        taskTable.deleteRow(i);
+    }
+}
+
 startDate.addEventListener("click", function() {
     // Get the current value of startDate input
     var startDateValue = startDate.value;

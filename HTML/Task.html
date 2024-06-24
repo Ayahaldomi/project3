@@ -71,6 +71,8 @@
             
         </select>
         <input id="add" type="submit" value="Add A Task" onclick="addtask()" >
+        <p>Search by name :</p>
+            <input type="text" name="searchName" id="search-bar" placeholder="Name" oninput="searchTasks()"> 
          </div> 
         
           <div style="overflow: auto;" id="table-div">
@@ -88,8 +90,8 @@
                 <th scope="col">Action</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
+            <tbody id="filter">
+            
 
             </tbody>
           </table>

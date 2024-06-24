@@ -128,6 +128,17 @@ input[type="text"],textarea {
     font-size: 14px;
      color: #003366; /*Text color  */
 }
+#search-bar{
+    width: 30%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #003366;
+    margin-left: 10px;
+
+}
 textarea {
     resize: vertical;
 }
@@ -150,7 +161,8 @@ input[type="submit"] {
     padding: 10px 20px;
     cursor: pointer;
     display: block;
-    /* margin: 0 auto; */
+    margin-right: 15px;
+    
 }
 .button {
     background-color: #FFA726;
@@ -338,6 +350,7 @@ tr td{
 @media screen and (max-width: 426px) {
     #addTaskSelect{
         display: flex;
+        flex-wrap: wrap;
         width: auto;
         justify-content: flex-start;
         /* MARGIN: auto; */
