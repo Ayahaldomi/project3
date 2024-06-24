@@ -265,7 +265,7 @@ tr td{
 }
 .TodoS{
     color: white;
-    background-color:#959595;
+    background-color:#e69824;
     padding: 5px 10px;
     border-radius: 8px;
     text-align: center;
@@ -274,7 +274,7 @@ tr td{
 }
 .inProgressS{
     color: white;
-    background-color:rgba(0, 128, 0, 0.75);
+    background-color:gray;
     padding: 5px 10px;
     border-radius: 8px;
     width: 90%;
@@ -282,7 +282,15 @@ tr td{
 }
 .doneS{
     color: white;
-    background-color:rgba(0, 0, 255, 0.75);
+    background-color:greenyellow;
+    padding: 5px 10px;
+    border-radius: 8px;
+    width: 90%;
+    display: inline-block;
+}
+.blockS{
+    color: white;
+    background-color:red;
     padding: 5px 10px;
     border-radius: 8px;
     width: 90%;
@@ -438,4 +446,7 @@ tr td{
 .popup .buttons .ok {
     background-color: #FFA726;
     color: white;
+}
+#error{
+    display: none;
 }

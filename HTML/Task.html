@@ -129,9 +129,10 @@
             <div id="Dstatus">
                 <label for="status">Status:</label><br>
                 <select class="select" id="status" name="status" required>
-                    <option style="display: none;"  value="To-do">To-do</option>
+                    <option  value="To-do">To-do</option>
                     <option selected  value="In Progress">In Progress</option>
-                    <option style="display: none;" value="Done">Done</option>
+                    <option value="Done">Done</option>
+                    <option value="Block">Block</option>
                 </select>
             </div>
             <div id="Dpriority">
@@ -148,8 +149,10 @@
             </div>
             <div>    
             <label for="dueDate">Due date:</label><br>
-            <input type="date" id="dueDate" name="dueDate" required><br><br>
+            <input type="date" id="dueDate" name="dueDate" min="startDate" required>
+            <br><br>
             </div>
+           
         </div>
         <label for="description">Description:</label>
         <textarea id="description" name="description" rows="4" cols="50" placeholder=""></textarea><br>

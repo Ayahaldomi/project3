@@ -60,12 +60,14 @@ function populateTable(dataArray) {
         
     }
 }
-
+var date = new Date();
 function enable() {
     var radio1 = document.getElementById('radio1')
     var radio2 = document.getElementById('radio2')
    if  (radio1.checked){
     dayDate1.disabled = false;
+    dayDate1.valueAsDate = new Date();
+    
     dayDate2.disabled = false;
    }else{
     dayDate1.disabled = true;
@@ -73,6 +75,7 @@ function enable() {
    }
    if  (radio2.checked){
     hourTime1.disabled = false;
+    hourTime1.value = date.toISOString().substring(11,16);
     hourTime2.disabled = false;
    }else{
     hourTime1.disabled = true;
@@ -154,6 +157,20 @@ const hourTime1 = document.getElementById("hourTime1");
 const hourTime2 = document.getElementById("hourTime2");
 var form = document.getElementById("form");
 
+dayDate1.addEventListener("click", function() {
+    // Get the current value of startDate input
+    var dayDate1Value = dayDate1.value;
+    
+    // Set the min attribute of endDate input to startDate value
+    dayDate2.setAttribute("min", dayDate1Value);
+});
+hourTime1.addEventListener("click", function() {
+    // Get the current value of startTime input
+    var hourTime1Value = hourTime1.value;
+    
+    // Set the min attribute of endTime input to startTime value
+    hourTime2.setAttribute("min", hourTime1Value);
+});
 
 //get form value and send it to local storage
 function addRow() {

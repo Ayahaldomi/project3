@@ -80,6 +80,9 @@ function populateTable(dataArray) {
         else if (dataArray[i].status === "Done") {
             newCell4.innerHTML = `<span class="doneS">${dataArray[i].status}</span>`;
         }
+        else if (dataArray[i].status === "Block") {
+            newCell4.innerHTML = `<span class="blockS">${dataArray[i].status}</span>`;
+        }
         
     }
 }
@@ -98,6 +101,7 @@ function addtask() {
             TaskForName.textContent = jsondata[i].name;
         }
     }
+    startDate.valueAsDate = new Date();
     
     // blur effect
     var blur = document.getElementById('blur');
@@ -109,6 +113,9 @@ function addtask() {
     
 }
 
+
+
+
 // Function to hide the form
 function cancel() {
     // form.style.display = 'none';
@@ -117,6 +124,9 @@ function cancel() {
     blur.classList.toggle('active')
     form.classList.toggle('active');
     body.style.overflowY = 'auto';
+
+    startDate.value = ""
+    dueDate.value = ""
 
 
 }
@@ -141,6 +151,14 @@ const description = document.getElementById("description");
 var form = document.getElementById("form");
 
 
+startDate.addEventListener("click", function() {
+    // Get the current value of startDate input
+    var startDateValue = startDate.value;
+    
+    // Set the min attribute of endDate input to startDate value
+    dueDate.setAttribute("min", startDateValue);
+});
+
 //add a new row to the table and local storage
 function addRow() {
     // for required field
@@ -148,6 +166,7 @@ function addRow() {
         form.reportValidity();
         return;
     }
+    
 
     let collection = itemList.value;
     let taskTitleValue = taskTitle.value;
@@ -157,7 +176,13 @@ function addRow() {
     let dueDateValue = dueDate.value;
     let descriptionValue = description.value;
 
-    
+    // dueDateValue.addEventListener('value', function(){
+    //     if (startDateValue < dueDateValue){
+    //         document.getElementById('error').style.display = 'inline';
+            
+            
+    //     }
+    // })
 
     for (let i = 0; i < jsondata.length; i++) {
         if (collection == jsondata[i].id) {
